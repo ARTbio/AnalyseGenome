@@ -9,3 +9,5 @@ screen -dmS ephemeris /root/galaxy/.venv/bin/shed-tools install \
                 -a "$API" \
                 -u admin@galaxy.org \
                 -t ~/AnalyseGenome/GalaxyServer/bg_tools.yml
+echo "tool installation is complete, press any key to terminate this screen session\n"
+read interrupt
