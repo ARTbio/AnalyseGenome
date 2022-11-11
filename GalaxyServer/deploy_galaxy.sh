@@ -10,5 +10,5 @@ tar -xvf static.tar.gz && tar -xvf client.tar.gz
 cp ~/AnalyseGenome/GalaxyServer/job_conf.xml ~/galaxy/config/
 pwd
 echo "Galaxy is now deployin in the background\n"
-echo "To follow deployment, please execute `screen -r galaxyscreen`
+echo "To follow deployment, please execute `screen -r galaxyscreen`"
 screen -dmS galaxyscreen sh run.sh # this command runs in the screen session galaxyscreen until killed
