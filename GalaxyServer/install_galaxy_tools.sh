@@ -10,5 +10,5 @@ screen -dmS ephemeris /root/galaxy/.venv/bin/shed-tools install \
                 -u admin@galaxy.org \
                 -t ~/AnalyseGenome/GalaxyServer/bg_tools.yml \
                 --log_file ~/tools.log
-echo "tool installation is complete, press 'enter' key to terminate this screen session\n"
+echo "tool installation is complete, press 'enter' key to detach from this screen session.\n"
 read interrupt
