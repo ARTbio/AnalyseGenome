@@ -33,6 +33,7 @@
         <tool id="samtool_filter2" destination="gce_multicore"/>
         <tool id="small_rna_maps" destination="gce_multicore"/>
         <tool id="sr_bowtie_dataset_annotation" destination="gce_multicore"/>
+        <tool id="bowtie_index_builder_data_manager" destination="gce_multicore"/>
    </tools>
 
 
