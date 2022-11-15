@@ -6,7 +6,7 @@ sed -i.bak "s/#admin_users: null/admin_users: admin@galaxy.org/" ~/galaxy/config
 rm -rf ~/galaxy/client ~/galaxy/static
 cd ~/galaxy && wget https://psilo.sorbonne-universite.fr/index.php/s/Kw9y8LgYyXBq3pr/download/client.tar.gz \
                     https://psilo.sorbonne-universite.fr/index.php/s/YCEe2XNbgLMf2Px/download/static.tar.gz
-tar -xvf static.tar.gz && tar -xvf client.tar.gz
+tar -xf static.tar.gz && tar -xf client.tar.gz
 cp ~/AnalyseGenome/GalaxyServer/job_conf.xml ~/galaxy/config/
 pwd
 echo "Galaxy is now deployin in the background\n"
