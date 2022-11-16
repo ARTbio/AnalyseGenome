@@ -9,4 +9,5 @@ cd ~/galaxy && wget https://psilo.sorbonne-universite.fr/index.php/s/Kw9y8LgYyXB
 tar -xf static.tar.gz && tar -xf client.tar.gz
 cp ~/AnalyseGenome/GalaxyServer/job_conf.xml ~/galaxy/config/
 sh run.sh --daemon # this command runs in the screen session galaxyscreen until killed
+echo "source /root/galaxy/.venv/bin/activate" >> /root/.bashrc
 echo "Galaxy is now running as a daemon in the background\n"
