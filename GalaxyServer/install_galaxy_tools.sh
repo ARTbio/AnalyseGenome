@@ -1,4 +1,5 @@
-. /root/.bashrc
+#!/bin/bash
+source /root/.bashrc
 echo "please enter your admin API key: "
 read API
 /root/galaxy/database/dependencies/_conda/bin/conda update conda -y
