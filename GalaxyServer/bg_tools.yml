@@ -1,5 +1,20 @@
 tools:
 
+- name: data_manager_fetch_genome_dbkeys_all_fasta
+  owner: devteam
+  tool_panel_section_label: null
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+
+- name: data_manager_bowtie_index_builder
+  owner: iuc
+  tool_panel_section_label: null
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+
+- name: data_manager_sam_fasta_index_builder
+  owner: devteam
+  tool_panel_section_label: null
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+
 - name: justdiff
   owner: artbio
   tool_panel_section_label: "Analyse des Génomes"
@@ -58,21 +73,6 @@ tools:
 - name: sr_bowtie
   owner: artbio
   tool_panel_section_label: Analyse des Génomes
-  tool_shed_url: https://toolshed.g2.bx.psu.edu/
-
-- name: data_manager_bowtie_index_builder
-  owner: iuc
-  tool_panel_section_label: null
-  tool_shed_url: https://toolshed.g2.bx.psu.edu/
-
-- name: data_manager_fetch_genome_dbkeys_all_fasta
-  owner: devteam
-  tool_panel_section_label: null
-  tool_shed_url: https://toolshed.g2.bx.psu.edu/
-
-- name: data_manager_sam_fasta_index_builder
-  owner: devteam
-  tool_panel_section_label: null
   tool_shed_url: https://toolshed.g2.bx.psu.edu/
 
 - name: bowtie_wrappers
