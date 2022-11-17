@@ -13,12 +13,30 @@
                allocating machine define a second local runner with different name and fewer workers
                to run this destination. -->
         </destination>
+        <destination id="bowtie" runner="local">
+          <param id="local_slots">7</param> <!-- Specify GALAXY_SLOTS for local jobs. -->
+          <!-- Warning: Local slot count doesn't tie up additional worker threads, to prevent over
+               allocating machine define a second local runner with different name and fewer workers
+               to run this destination. -->
+        </destination>
     </destinations>
+
+    <limits>
+        <limit type="anonymous_user_concurrent_jobs">1</limit>
+        <limit type="registered_user_concurrent_jobs">3</limit>
+        <!-- destination_user_concurrent_jobs:
+                The number of jobs a user can have active in the specified
+                destination, or across all destinations identified by the
+                specified tag. (formerly: concurrent_jobs)
+        -->
+        <limit type="destination_user_concurrent_jobs" id="bowtie">1</limit>
+    </limits>
 
    <tools>
         <tool id="sam_to_bam" destination="gce_multicore"/>
-        <tool id="bowtie" destination="gce_multicore"/>
-        <tool id="bowtie2" destination="gce_multicore"/>
+        <tool id="bowtie" destination="bowtie"/>
+        <tool id="bowtie_wrapper" destination="bowtie"/>
+        <tool id="bowtie2" destination="bowtie"/>
         <tool id="bowtieForSmallRNA" destination="gce_multicore"/>
         <tool id="bowtie_wrapper" destination="gce_multicore"/>
         <tool id="mircounts" destination="gce_multicore"/>
@@ -35,7 +53,5 @@
         <tool id="sr_bowtie_dataset_annotation" destination="gce_multicore"/>
         <tool id="bowtie_index_builder_data_manager" destination="gce_multicore"/>
    </tools>
-
-
 
 </job_conf>
