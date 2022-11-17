@@ -34,6 +34,7 @@
 
    <tools>
         <tool id="sam_to_bam" destination="gce_multicore"/>
+        <tool id="sambamba_sample_or_filter" destination="gce_multicore"/>
         <tool id="bowtie" destination="bowtie"/>
         <tool id="bowtie_wrapper" destination="bowtie"/>
         <tool id="bowtie2" destination="bowtie"/>
