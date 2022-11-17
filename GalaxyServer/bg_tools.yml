@@ -15,6 +15,21 @@ tools:
   tool_panel_section_label: null
   tool_shed_url: https://toolshed.g2.bx.psu.edu/
 
+- name: sr_bowtie
+  owner: artbio
+  tool_panel_section_label: Analyse des Génomes
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+
+- name: bowtie_wrappers
+  owner: devteam
+  tool_panel_section_label: Analyse des Génomes
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+
+- name: sambamba
+  owner: artbio
+  tool_panel_section_label: SAMTOOLS
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+
 - name: justdiff
   owner: artbio
   tool_panel_section_label: "Analyse des Génomes"
@@ -67,16 +82,6 @@ tools:
 
 - name: yac_clipper
   owner: artbio
-  tool_panel_section_label: Analyse des Génomes
-  tool_shed_url: https://toolshed.g2.bx.psu.edu/
-
-- name: sr_bowtie
-  owner: artbio
-  tool_panel_section_label: Analyse des Génomes
-  tool_shed_url: https://toolshed.g2.bx.psu.edu/
-
-- name: bowtie_wrappers
-  owner: devteam
   tool_panel_section_label: Analyse des Génomes
   tool_shed_url: https://toolshed.g2.bx.psu.edu/
 
