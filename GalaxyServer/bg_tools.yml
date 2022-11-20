@@ -101,11 +101,6 @@ tools:
   tool_panel_section_label: SAMTOOLS
   tool_shed_url: https://toolshed.g2.bx.psu.edu/
 
-- name: sam_to_bam
-  owner: devteam
-  tool_panel_section_label: SAMTOOLS
-  tool_shed_url: https://toolshed.g2.bx.psu.edu/
-
 - name: samtool_filter2
   owner: devteam
   tool_panel_section_label: SAMTOOLS
