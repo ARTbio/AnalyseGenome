@@ -2,7 +2,7 @@
 echo "please enter your admin API key: "
 read API
 rm -rf /root/galaxy/database/dependencies/_conda
-wget -qO- https://psilo.sorbonne-universite.fr/index.php/s/6AsHpgxqtnbrQDm/download/_conda.tar.gz | tar xvz -C /root/galaxy/database/dependencies/
+wget -qO- https://psilo.sorbonne-universite.fr/index.php/s/6AsHpgxqtnbrQDm/download/_conda.tar.gz | tar xz -C /root/galaxy/database/dependencies/
 /root/galaxy/database/dependencies/_conda/bin/conda update conda -y
 /root/galaxy/.venv/bin/pip install ephemeris
 screen -dmS ephemeris /root/galaxy/.venv/bin/shed-tools install \
