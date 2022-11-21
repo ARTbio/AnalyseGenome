@@ -12,4 +12,4 @@ screen -dmS ephemeris /root/galaxy/.venv/bin/shed-tools install \
 echo "To follow installation, you may use the 'screen -r ephemeris' command"
 echo "Alternatively, you can use the 'tail -f /root/tools.log' command and terminate by Ctrl-C"
 VAR=`grep -c "\- " /root/AnalyseGenome/GalaxyServer/bg_tools.yml`
-echo "Installation of the $VAR galaxy tools may take a long time. Keep cool"
+echo "Installation of the $((VAR-1)) galaxy tools may take a long time. Keep cool"
