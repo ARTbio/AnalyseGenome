@@ -38,7 +38,7 @@
         <tool id="bowtie" destination="bowtie"/>
         <tool id="bowtie_wrapper" destination="bowtie"/>
         <tool id="bowtie2" destination="bowtie"/>
-        <tool id="bowtieForSmallRNA" destination="gce_multicore"/>
+        <tool id="bowtieForSmallRNA" destination="bowtie"/>
         <tool id="bowtie_wrapper" destination="gce_multicore"/>
         <tool id="mircounts" destination="gce_multicore"/>
         <tool id="picard_SamToFastq" destination="gce_multicore" />
@@ -51,7 +51,7 @@
         <tool id="samtools_fastx" destination="gce_multicore"/>
         <tool id="samtool_filter2" destination="gce_multicore"/>
         <tool id="small_rna_maps" destination="gce_multicore"/>
-        <tool id="sr_bowtie_dataset_annotation" destination="gce_multicore"/>
+        <tool id="sr_bowtie_dataset_annotation" destination="bowtie"/>
         <tool id="bowtie_index_builder_data_manager" destination="gce_multicore"/>
    </tools>
 
