@@ -14,6 +14,7 @@ cd ~/galaxy && wget https://psilo.sorbonne-universite.fr/index.php/s/Kw9y8LgYyXB
                     https://psilo.sorbonne-universite.fr/index.php/s/YCEe2XNbgLMf2Px/download/static.tar.gz
 tar -xf static.tar.gz && tar -xf client.tar.gz
 cp ~/AnalyseGenome/GalaxyServer/job_conf.xml ~/galaxy/config/
-sh run.sh --daemon # this command runs in the screen session galaxyscreen until killed
-echo "source /root/galaxy/.venv/bin/activate" >> /root/.bashrc
+sh run.sh --daemon # Triggers deploiement and leave galaxy running as a deamon
+echo "source /root/galaxy/.venv/bin/activate" >> /root/.bashrc # automatically activate galaxy .venv
+echo "/root/galaxy/.venv/bin/galaxyctl start" >> /root/.bashrc # automatically start galaxy at next connection (harmless if already running)
 echo "Galaxy is now running as a daemon in the background\n"
