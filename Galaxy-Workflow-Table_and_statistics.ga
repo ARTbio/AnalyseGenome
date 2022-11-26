@@ -1,0 +1,227 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "creator": [
+        {
+            "class": "Person",
+            "identifier": "https://orcid.org/0000-0001-7709-2116",
+            "name": "Christophe Antoniewski"
+        }
+    ],
+    "format-version": "0.1",
+    "name": "Table_and_statistics",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Featurecount Collection WT"
+                }
+            ],
+            "label": "Featurecount Collection WT",
+            "name": "Input dataset collection",
+            "outputs": [],
+            "position": {
+                "left": 0.0,
+                "top": 0.0
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\", \"collection_type\": \"list\"}",
+            "tool_version": null,
+            "type": "data_collection_input",
+            "uuid": "9b0287b0-287c-4541-a24e-e3bd3e07da78",
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Featurecount Collection SF"
+                }
+            ],
+            "label": "Featurecount Collection SF",
+            "name": "Input dataset collection",
+            "outputs": [],
+            "position": {
+                "left": 1.953125,
+                "top": 142.10155771521718
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\", \"collection_type\": \"list\"}",
+            "tool_version": null,
+            "type": "data_collection_input",
+            "uuid": "65b881ca-294d-435b-b718-108cf7153290",
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "__MERGE_COLLECTION__",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "inputs_0|input": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "inputs_1|input": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Merge collections",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 340.5390898082726,
+                "top": 44.273434815853534
+            },
+            "post_job_actions": {},
+            "tool_id": "__MERGE_COLLECTION__",
+            "tool_state": "{\"advanced\": {\"conflict\": {\"duplicate_options\": \"keep_first\", \"__current_case__\": 3}}, \"inputs\": [{\"__index__\": 0, \"input\": {\"__class__\": \"ConnectedValue\"}}, {\"__index__\": 1, \"input\": {\"__class__\": \"ConnectedValue\"}}], \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "cc5964ce-a0dd-47bd-90f1-e25e5bd9629d",
+            "workflow_outputs": [
+                {
+                    "label": "input dataset(s) (merged)",
+                    "output_name": "output",
+                    "uuid": "fcb7ab72-5b83-496f-b3a2-b0fed4617053"
+                }
+            ]
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/collection_column_join/collection_column_join/0.0.3",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "input_tabular": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Column join",
+            "outputs": [
+                {
+                    "name": "tabular_output",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 615.0546830653233,
+                "top": 120.23437091542931
+            },
+            "post_job_actions": {
+                "RenameDatasetActiontabular_output": {
+                    "action_arguments": {
+                        "newname": "General table"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "tabular_output"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/collection_column_join/collection_column_join/0.0.3",
+            "tool_shed_repository": {
+                "changeset_revision": "3ddd99c7efee",
+                "name": "collection_column_join",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"fill_char\": \".\", \"has_header\": \"1\", \"identifier_column\": \"1\", \"include_outputs\": null, \"input_tabular\": {\"__class__\": \"ConnectedValue\"}, \"old_col_in_header\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.3",
+            "type": "tool",
+            "uuid": "f53227a9-9528-4d69-acfb-2cccda7dd420",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "tabular_output",
+                    "uuid": "811745bb-d5b9-471d-84bb-780cadafcf48"
+                }
+            ]
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/vmarcon/summary_statistics/summary_statistics/1.0.0",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "file_in": {
+                    "id": 3,
+                    "output_name": "tabular_output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Summary statistics",
+            "outputs": [
+                {
+                    "name": "log_file",
+                    "type": "html"
+                },
+                {
+                    "name": "table_file",
+                    "type": "tabular"
+                },
+                {
+                    "name": "graph_file",
+                    "type": "pdf"
+                }
+            ],
+            "position": {
+                "left": 932.5937595695657,
+                "top": 145.281250116702
+            },
+            "post_job_actions": {
+                "HideDatasetActionlog_file": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "log_file"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/vmarcon/summary_statistics/summary_statistics/1.0.0",
+            "tool_shed_repository": {
+                "changeset_revision": "46ddb0591d8b",
+                "name": "summary_statistics",
+                "owner": "vmarcon",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"NA_code\": \"NA\", \"file_in\": {\"__class__\": \"ConnectedValue\"}, \"ploting_cond\": {\"ploting\": \"T\", \"__current_case__\": 0, \"plot_chosen\": [\"boxplot\", \"histogram\", \"density\", \"pairsplot\", \"MAplot\"]}, \"stat_cond\": {\"stat\": \"T\", \"__current_case__\": 0, \"stat_chosen\": [\"mean\", \"sd\", \"variance\", \"median\", \"quartile\"]}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "971db1fb-b874-4323-ad72-1a8de9550eb7",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "graph_file",
+                    "uuid": "8360a856-bc33-4a64-b701-efbb75d8f390"
+                },
+                {
+                    "label": null,
+                    "output_name": "table_file",
+                    "uuid": "ac963126-99b9-4be2-9899-4eeda02b707c"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "392b4c74-6b4d-4e36-90e7-e283bb237d2b",
+    "version": 7
+}
