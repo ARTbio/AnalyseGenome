@@ -9,7 +9,7 @@ chmod 600 /root/.ssh/authorized_keys
 cp ~/galaxy/config/galaxy.yml.sample ~/galaxy/config/galaxy.yml
 sed -i.bak "s/# bind: localhost:8080/bind: '0.0.0.0:80'/" ~/galaxy/config/galaxy.yml
 sed -i.bak "s/#admin_users: null/admin_users: admin@galaxy.org/" ~/galaxy/config/galaxy.yml
-sed -i.bak "s/# galaxy_user:/galaxy_user: root" ~/galaxy/config/galaxy.yml
+sed -i.bak "s/# galaxy_user:/galaxy_user: root/" ~/galaxy/config/galaxy.yml
 sed -i.bak "s/# virtualenv:/virtualenv: \/root\/galaxy\/\.venv/" ~/galaxy/config/galaxy.yml
 cp ~/AnalyseGenome/GalaxyServer/job_conf.xml ~/galaxy/config/
 sh run.sh --daemon # Triggers deploiement and leave galaxy running as a deamon
