@@ -12,6 +12,6 @@ sed -i.bak "s/#admin_users: null/admin_users: admin@galaxy.org/" ~/galaxy/config
 sed -i.bak "s/# galaxy_user:/galaxy_user: root/" ~/galaxy/config/galaxy.yml
 sed -i.bak "s/# virtualenv:/virtualenv: \/root\/galaxy\/\.venv/" ~/galaxy/config/galaxy.yml
 cp ~/AnalyseGenome/GalaxyServer/job_conf.xml ~/galaxy/config/
-sh run.sh --daemon # Triggers deploiement and leave galaxy running as a deamon
+sh ~/galaxy/run.sh --daemon # Triggers deploiement and leave galaxy running as a deamon
 echo "source /root/galaxy/.venv/bin/activate" >> /root/.bashrc # automatically activate galaxy .venv
 echo "Galaxy is now running as a daemon in the background\nand is controlled by systemctl\n"
