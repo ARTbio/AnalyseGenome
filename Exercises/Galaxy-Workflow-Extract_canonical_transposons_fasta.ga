@@ -1,6 +1,6 @@
 {
     "a_galaxy_workflow": "true",
-    "annotation": "Bug fixed for the Analyse des g\u00e9nomes training November 2022",
+    "annotation": "Tool versions updated for the Analyse des g\u00e9nomes training November 2023",
     "creator": [
         {
             "class": "Person",
@@ -33,14 +33,15 @@
             "name": "Input dataset",
             "outputs": [],
             "position": {
-                "left": 0.0,
+                "left": 0,
                 "top": 60.578125
             },
             "tool_id": null,
             "tool_state": "{\"optional\": false, \"tag\": \"\"}",
             "tool_version": null,
             "type": "data_input",
-            "uuid": "6d2462d5-e0b2-46f5-bfd0-504ac71dc185",
+            "uuid": "585effb5-7392-4775-a92a-d161fbd94a65",
+            "when": null,
             "workflow_outputs": []
         },
         "1": {
@@ -64,7 +65,7 @@
                 }
             ],
             "position": {
-                "left": 229.0,
+                "left": 229,
                 "top": 7.9453125
             },
             "post_job_actions": {
@@ -75,15 +76,16 @@
                 }
             },
             "tool_id": "Grep1",
-            "tool_state": "{\"input\": {\"__class__\": \"ConnectedValue\"}, \"invert\": \"\", \"keep_header\": \"false\", \"pattern\": \"(^ID)|(^ +[GATCNgatcn ]+\\\\d+)\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_state": "{\"input\": {\"__class__\": \"ConnectedValue\"}, \"invert\": \"\", \"keep_header\": false, \"pattern\": \"(^ID)|(^ +[GATCNgatcn ]+\\\\d+)\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
             "tool_version": "1.0.4",
             "type": "tool",
-            "uuid": "f501b244-9502-4481-924a-fff9704f9005",
+            "uuid": "d898c07c-5e78-4c1e-a82d-03c9640f3b3a",
+            "when": null,
             "workflow_outputs": []
         },
         "2": {
             "annotation": "",
-            "content_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.2",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.3",
             "errors": null,
             "id": 2,
             "input_connections": {
@@ -112,22 +114,23 @@
                     "output_name": "out_file1"
                 }
             },
-            "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.2",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.3",
             "tool_shed_repository": {
-                "changeset_revision": "399da6b5ec21",
+                "changeset_revision": "503bcd6ebe4b",
                 "name": "regex_find_replace",
                 "owner": "galaxyp",
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             },
             "tool_state": "{\"checks\": [{\"__index__\": 0, \"pattern\": \"^ID   \", \"replacement\": \">\"}, {\"__index__\": 1, \"pattern\": \"(>[^ ]+) .+\", \"replacement\": \"\\\\1\"}], \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
-            "tool_version": "1.0.2",
+            "tool_version": "1.0.3",
             "type": "tool",
-            "uuid": "83fe6986-7819-4d57-af98-1b63aeed1e64",
+            "uuid": "b7038f3a-ac36-4e1f-ade6-6bf5a48c1b9b",
+            "when": null,
             "workflow_outputs": []
         },
         "3": {
             "annotation": "",
-            "content_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.2",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.3",
             "errors": null,
             "id": 3,
             "input_connections": {
@@ -156,22 +159,23 @@
                     "output_name": "out_file1"
                 }
             },
-            "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.2",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.3",
             "tool_shed_repository": {
-                "changeset_revision": "399da6b5ec21",
+                "changeset_revision": "503bcd6ebe4b",
                 "name": "regex_find_replace",
                 "owner": "galaxyp",
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             },
             "tool_state": "{\"checks\": [{\"__index__\": 0, \"pattern\": \"([GATCNgatcn]+) \", \"replacement\": \"\\\\1\"}, {\"__index__\": 1, \"pattern\": \"^ +\", \"replacement\": \"\"}], \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
-            "tool_version": "1.0.2",
+            "tool_version": "1.0.3",
             "type": "tool",
-            "uuid": "679d947e-18f1-451d-b806-556fe6c031c2",
+            "uuid": "120a9281-c07e-492a-9758-2f3662e29d73",
+            "when": null,
             "workflow_outputs": []
         },
         "4": {
             "annotation": "",
-            "content_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.2",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.3",
             "errors": null,
             "id": 4,
             "input_connections": {
@@ -209,22 +213,23 @@
                     "output_name": "out_file1"
                 }
             },
-            "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.2",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.3",
             "tool_shed_repository": {
-                "changeset_revision": "399da6b5ec21",
+                "changeset_revision": "503bcd6ebe4b",
                 "name": "regex_find_replace",
                 "owner": "galaxyp",
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             },
             "tool_state": "{\"checks\": [{\"__index__\": 0, \"pattern\": \" +[0-9]+\", \"replacement\": \"\"}], \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
-            "tool_version": "1.0.2",
+            "tool_version": "1.0.3",
             "type": "tool",
-            "uuid": "c1f00b2d-fabf-4da6-a319-c28c4384ef97",
+            "uuid": "d55f1191-dc85-43aa-b24f-d37add9132b4",
+            "when": null,
             "workflow_outputs": [
                 {
                     "label": null,
                     "output_name": "out_file1",
-                    "uuid": "a68f2167-7612-450b-9481-367dac966431"
+                    "uuid": "6ffbc1a1-9e64-4dfa-938d-b0d667b59419"
                 }
             ]
         }
@@ -232,6 +237,6 @@
     "tags": [
         "BiologieDesGenomes"
     ],
-    "uuid": "d67b10b2-1c28-4ef8-b572-8d3f8be771a8",
-    "version": 11
+    "uuid": "83e9bc85-91c9-499c-869f-1a6860604db7",
+    "version": 3
 }
