@@ -29,6 +29,12 @@ tools:
   tool_panel_section_label: "HTS data manipulation"
   tool_shed_url: https://toolshed.g2.bx.psu.edu/
 
+- name: seqtk
+  owner: iuc
+  tool_panel_section_id: hts_data
+  tool_panel_section_label: "HTS data manipulation"
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+
 - name: multiqc
   owner: iuc
   tool_panel_section_id: hts_data
