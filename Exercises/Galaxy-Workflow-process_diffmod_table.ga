@@ -1,0 +1,345 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "format-version": "0.1",
+    "name": "process diffmod table",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "diffmod table"
+                }
+            ],
+            "label": "diffmod table",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 0,
+                "top": 0
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "00b162a2-4fc9-456e-aabb-a9d707fcf22f",
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.3",
+            "errors": null,
+            "id": 1,
+            "input_connections": {
+                "input": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Regex Find And Replace",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 180.09375,
+                "top": 76.0546875
+            },
+            "post_job_actions": {
+                "RenameDatasetActionout_file1": {
+                    "action_arguments": {
+                        "newname": "4regexinOne"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.3",
+            "tool_shed_repository": {
+                "changeset_revision": "503bcd6ebe4b",
+                "name": "regex_find_replace",
+                "owner": "galaxyp",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"checks\": [{\"__index__\": 0, \"pattern\": \"^(([a-zA-Z0-9.-]+?\\\\t){6})\\\\t([a-zA-Z0-9.-]+?\\\\t)\", \"replacement\": \"\\\\1\\\\3\\\\3\"}, {\"__index__\": 1, \"pattern\": \"^(([a-zA-Z0-9.-]+?\\\\t){6})([a-zA-Z0-9.-]+?)\\\\t\\\\t\", \"replacement\": \"\\\\1\\\\3\\\\t\\\\3\\\\t\"}, {\"__index__\": 2, \"pattern\": \"^(([a-zA-Z0-9.-]+?\\\\t){8})\\\\t(.+?\\\\t)\", \"replacement\": \"\\\\1\\\\3\\\\3\"}, {\"__index__\": 3, \"pattern\": \"^(([a-zA-Z0-9.-]+?\\\\t){8})([a-zA-Z0-9.-]+?)\\\\t\\\\t\", \"replacement\": \"\\\\1\\\\3\\\\t\\\\3\\\\t\"}], \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.3",
+            "type": "tool",
+            "uuid": "f72d5d36-8dbf-45b3-8314-231d6181a829",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "out_file1",
+                    "uuid": "a8f9ba25-9ce2-4c3b-85e8-99a34341db9c"
+                }
+            ]
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/column_maker/Add_a_column1/2.0",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "input": {
+                    "id": 1,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": "compute means of diffmod rates",
+            "name": "Compute",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 322.5625,
+                "top": 198.9765625
+            },
+            "post_job_actions": {
+                "RenameDatasetActionout_file1": {
+                    "action_arguments": {
+                        "newname": "add diffmod rate means"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/column_maker/Add_a_column1/2.0",
+            "tool_shed_repository": {
+                "changeset_revision": "6595517c2dd8",
+                "name": "column_maker",
+                "owner": "devteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"avoid_scientific_notation\": \"true\", \"error_handling\": {\"auto_col_types\": \"false\", \"fail_on_non_existent_columns\": \"true\", \"non_computable\": {\"action\": \"--fail-on-non-computable\", \"__current_case__\": 0}}, \"input\": {\"__class__\": \"ConnectedValue\"}, \"ops\": {\"header_lines_select\": \"yes\", \"__current_case__\": 1, \"expressions\": [{\"__index__\": 0, \"cond\": \"(float(c7)+float(c8))/2\", \"add_column\": {\"mode\": \"\", \"__current_case__\": 0, \"pos\": \"\"}, \"new_column_name\": \"mean_mod_rate_cond\"}, {\"__index__\": 1, \"cond\": \"(float(c9)+float(c10))/2\", \"add_column\": {\"mode\": \"\", \"__current_case__\": 0, \"pos\": \"\"}, \"new_column_name\": \"mean_mod_rate_ref\"}]}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.0",
+            "type": "tool",
+            "uuid": "4431c27e-984e-4689-a950-3733a1fb535b",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "out_file1",
+                    "uuid": "e220026d-adf7-44cd-8327-4a897b76666e"
+                }
+            ]
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regexColumn1/1.0.3",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "input": {
+                    "id": 2,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Column Regex Find And Replace",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 457.609375,
+                "top": 320.03125
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regexColumn1/1.0.3",
+            "tool_shed_repository": {
+                "changeset_revision": "503bcd6ebe4b",
+                "name": "regex_find_replace",
+                "owner": "galaxyp",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"checks\": [{\"__index__\": 0, \"pattern\": \"^id\", \"replacement\": \"#id\"}], \"field\": \"1\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.3",
+            "type": "tool",
+            "uuid": "9e1d2a4c-1c29-46ce-84b3-3c0b4924d78d",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "out_file1",
+                    "uuid": "b2717948-1d06-452c-ae15-ceccf25cd7c8"
+                }
+            ]
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "Grouping1",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "input1": {
+                    "id": 3,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": "aggregate diffmod rate means",
+            "name": "Group",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 655.578125,
+                "top": 461.03125
+            },
+            "post_job_actions": {
+                "RenameDatasetActionout_file1": {
+                    "action_arguments": {
+                        "newname": "aggregated_mean_mod_rates"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "Grouping1",
+            "tool_state": "{\"groupcol\": \"1\", \"ignorecase\": \"false\", \"ignorelines\": [\"35\"], \"input1\": {\"__class__\": \"ConnectedValue\"}, \"operations\": [{\"__index__\": 0, \"optype\": \"sum\", \"opcol\": \"23\", \"opround\": \"no\", \"opdefault\": null}, {\"__index__\": 1, \"optype\": \"sum\", \"opcol\": \"24\", \"opround\": \"no\", \"opdefault\": null}], \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.1.4",
+            "type": "tool",
+            "uuid": "78034d5b-0e94-4e87-bb77-d775dc88d1db",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "out_file1",
+                    "uuid": "5dafc7d3-f2ed-40b4-a017-7afb969d7e80"
+                }
+            ]
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/estrain/add_column_headers/add_column_headers/0.1.3",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "datatable": {
+                    "id": 4,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Add Header",
+                    "name": "datatable"
+                }
+            ],
+            "label": null,
+            "name": "Add Header",
+            "outputs": [
+                {
+                    "name": "Data Table",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 883.546875,
+                "top": 588.015625
+            },
+            "post_job_actions": {
+                "RenameDatasetActionData Table": {
+                    "action_arguments": {
+                        "newname": "aggregated_mean_mod_rates(header)"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "Data Table"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/estrain/add_column_headers/add_column_headers/0.1.3",
+            "tool_shed_repository": {
+                "changeset_revision": "ff2acdb98a74",
+                "name": "add_column_headers",
+                "owner": "estrain",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"datatable\": {\"__class__\": \"RuntimeValue\"}, \"header\": \"id,mean_mod_rate_test,mean_mod_rate_ref\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.3",
+            "type": "tool",
+            "uuid": "4699fa01-5a04-4703-8b5d-22b51d04dd76",
+            "workflow_outputs": [
+                {
+                    "label": "Add Header on input dataset(s)",
+                    "output_name": "Data Table",
+                    "uuid": "3599d231-6ee5-4da8-b6ef-f2ee03b8a8ff"
+                }
+            ]
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/column_maker/Add_a_column1/2.0",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "input": {
+                    "id": 5,
+                    "output_name": "Data Table"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Compute",
+                    "name": "input"
+                }
+            ],
+            "label": "aggregated diff_mod_rate",
+            "name": "Compute",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 1133.5625,
+                "top": 668.9765625
+            },
+            "post_job_actions": {
+                "RenameDatasetActionout_file1": {
+                    "action_arguments": {
+                        "newname": "aggregated diff_mod_rate"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/column_maker/Add_a_column1/2.0",
+            "tool_shed_repository": {
+                "changeset_revision": "6595517c2dd8",
+                "name": "column_maker",
+                "owner": "devteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"avoid_scientific_notation\": \"false\", \"error_handling\": {\"auto_col_types\": \"false\", \"fail_on_non_existent_columns\": \"true\", \"non_computable\": {\"action\": \"--fail-on-non-computable\", \"__current_case__\": 0}}, \"input\": {\"__class__\": \"RuntimeValue\"}, \"ops\": {\"header_lines_select\": \"yes\", \"__current_case__\": 1, \"expressions\": [{\"__index__\": 0, \"cond\": \"round(float(c2) - float(c3), 5)\", \"add_column\": {\"mode\": \"\", \"__current_case__\": 0, \"pos\": \"\"}, \"new_column_name\": \"aggregated_diff_mod_rate\"}]}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.0",
+            "type": "tool",
+            "uuid": "f2057587-da93-4ea2-8330-f1fa4f58c4de",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "out_file1",
+                    "uuid": "229db981-d9db-46c6-8e3a-e32889392906"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "49c155c8-1e01-446e-9617-49bdcceda075",
+    "version": 21
+}
