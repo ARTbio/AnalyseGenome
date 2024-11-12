@@ -2,9 +2,15 @@
 
 Ce repository GitHub est le successeur de https://github.com/ARTbio/Run-Galaxy.
 
-Il est utilisé pour collecter le matériel du training Galaxy du cours d'Analyse des Génomes
-2023
+Il est utilisé pour collecter le matériel spécifique du training Galaxy du cours d'Analyse des Génomes
+2024.
 
-Le repository `AnalyseGenome` est apparié à un documentation révisée pour 2023 :
+Il contient désormais assez peu de code utile car le déploiement de Galaxy pour le
+cours est codé avec [galaxyXpand](https://github.com/ARTbio/galaxyXpand/blob/ag2024/scripts/deploy_ag2024.sh).
 
-## [Documentation "Analyse des Génome 2023"](https://artbio.github.io/startbio/AnalyseGenomes_2023/outline/)
+Néanmoins il reste un bon "Hub" pratique pour la communication des problèmes ou
+avec les étudiants.
+
+Le repository `AnalyseGenome` est apparié à une documentation révisée pour 2024,
+dans la branche `ag2024` de [](https://artbio.github.io/startbio) :
+
