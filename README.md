@@ -12,5 +12,5 @@ Néanmoins il reste un bon "Hub" pratique pour la communication des problèmes o
 avec les étudiants.
 
 Le repository `AnalyseGenome` est apparié à une documentation révisée pour 2024,
-dans la branche `ag2024` de [](https://artbio.github.io/startbio) :
+dans la branche `ag2024` de [startbio](https://artbio.github.io/startbio) :
 
