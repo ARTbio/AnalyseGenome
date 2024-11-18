@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set -e
 apt update
-apt install -y python3.8-venv
+apt install -y python3.10-venv
 git clone https://github.com/ARTbio/AnalyseGenome.git
-git clone https://github.com/galaxyproject/galaxy.git -b release_23.1
+git clone https://github.com/galaxyproject/galaxy.git -b release_24.1
 echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDFdDo/U2shXOKSwSz1JhYY7jDCwuAt4sgPH2pw0r1fKmxJpsY7vZgwkn1XvZPDPPo9Go2LgNVCRBgRZ60f1ivlviy5D1deo/5XtMshDjJDSBaGx4QQhtjAsCgvZ/2Sx+wP2l7IVEYKzWdKens4JVZ+gIh/PwXS0PzNeWOLiCynlLncEm0nuV9Y6wCbhnUt9Zjbe/y0/Cm6wPpOqu9J2BKVerGZtnfvM2+MD6S40n4CH7iFRrnqlOlc6junnuJ6g/u2sIcYXhmD6bOttI5cOINGcDacitp7enUaiSt5ViVz0vjkHfuxr42rtq5dLMI6hQxnq8sjpfb1ygpe7HHHnHCn chris@lbcd-17.snv.jussieu.fr" >> /root/.ssh/authorized_keys
 chmod 600 /root/.ssh/authorized_keys
 # exemple of access: ssh -i ~/.ssh/id_rsa_chrisartbio  root@34.105.216.34
