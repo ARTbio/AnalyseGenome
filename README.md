@@ -14,4 +14,6 @@ avec les étudiants.
 Le repository `AnalyseGenome` est apparié à une documentation révisée pour 2024,
 dans la branche `ag2024` de [startbio](https://artbio.github.io/startbio) :
 
+
+
 ![](images/AnalyseGenomes_outline.png)
