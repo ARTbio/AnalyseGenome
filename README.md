@@ -18,5 +18,4 @@ La documentation de ce déploiement est disponible sur [startbio](https://artbio
 Ce repository reste le "Hub" pratique pour la communication
 avec les étudiants, via les issues ou les discussions de GitHub.
 
-
-![](images/AnalyseGenomes_outline.png)
+---
